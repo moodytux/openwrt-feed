@@ -21,7 +21,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/aide
 	SECTION:=admin
 	CATEGORY:=Administration
-	DEPENDS:=+libgcrypt
+	DEPENDS:=+libgcrypt +libpcre
 	TITLE:=AIDE
 	URL:=http://aide.sourceforge.net/
 endef
