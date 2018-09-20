@@ -1,0 +1,48 @@
+diff -Naur chkrootkit-0.52/Makefile chkrootkit-0.52-new/Makefile
+--- chkrootkit-0.52/Makefile	2017-01-04 22:54:00.000000000 +0000
++++ chkrootkit-0.52-new/Makefile	2018-09-20 13:28:15.429864420 +0100
+@@ -41,36 +41,36 @@
+ 
+ chklastlog:   chklastlog.c
+ 	${CC} ${CFLAGS} -o $@ chklastlog.c
+-	@strip $@
++	${STRIP} $@
+ 
+ chkwtmp:   chkwtmp.c
+ 	${CC} ${CFLAGS} -o $@ chkwtmp.c
+-	@strip $@
++	${STRIP} $@
+ 
+ ifpromisc:   ifpromisc.c
+ 	${CC} ${CFLAGS} ${LDFLAGS}  -D_FILE_OFFSET_BITS=64 -o $@ ifpromisc.c
+-	@strip $@
++	${STRIP} $@
+ 
+ chkproc:   chkproc.c
+ 	${CC} ${LDFLAGS} -o $@ chkproc.c
+-	@strip $@
++	${STRIP} $@
+ 
+ chkdirs:   chkdirs.c
+ 	${CC} ${LDFLAGS} -o $@ chkdirs.c
+-	@strip $@
++	${STRIP} $@
+ 
+ check_wtmpx:   check_wtmpx.c
+ 	${CC} ${LDFLAGS} -o $@ check_wtmpx.c
+-	@strip $@
++	${STRIP} $@
+ 
+ chkutmp:   chkutmp.c
+ 	${CC} ${LDFLAGS} -o $@ chkutmp.c
+-	@strip $@
++	${STRIP} $@
+ 
+ 
+ strings-static:   strings.c
+ 	${CC} ${STATIC} ${LDFLAGS} -o $@ strings.c
+-	@strip $@
++	${STRIP} $@
+ 
+ clean:
+ 	rm -f ${OBJS} core chklastlog chkwtmp ifpromisc chkproc chkdirs check_wtmpx strings-static chkutmp

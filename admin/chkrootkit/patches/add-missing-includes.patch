@@ -1,0 +1,33 @@
+diff -Naur chkrootkit-0.52/chkdirs.c chkrootkit-0.52-new/chkdirs.c
+--- chkrootkit-0.52/chkdirs.c	2017-01-04 22:54:00.000000000 +0000
++++ chkrootkit-0.52-new/chkdirs.c	2018-09-20 11:07:45.163403885 +0100
+@@ -41,6 +41,7 @@
+ #include <dirent.h>
+ #include <string.h>
+ #include <errno.h>
++#include <limits.h>
+ 
+ #ifndef NAME_MAX
+ #define NAME_MAX        PATH_MAX
+diff -Naur chkrootkit-0.52/chklastlog.c chkrootkit-0.52-new/chklastlog.c
+--- chkrootkit-0.52/chklastlog.c	2017-01-04 22:54:00.000000000 +0000
++++ chkrootkit-0.52-new/chklastlog.c	2018-09-19 12:03:23.088773803 +0100
+@@ -46,6 +46,7 @@
+ #include <signal.h>
+ #include <pwd.h>
+ #include <sys/types.h>
++#include <fcntl.h>
+ #include <utmp.h>
+ #if (HAVE_LASTLOG_H)
+ #include <lastlog.h>
+diff -Naur chkrootkit-0.52/chkwtmp.c chkrootkit-0.52-new/chkwtmp.c
+--- chkrootkit-0.52/chkwtmp.c	2017-02-18 15:52:25.000000000 +0000
++++ chkrootkit-0.52-new/chkwtmp.c	2018-09-19 12:03:23.088773803 +0100
+@@ -30,6 +30,7 @@
+ #include <time.h>
+ #include <sys/time.h>
+ #include <sys/file.h>
++#include <fcntl.h>
+ #ifdef SOLARIS2
+ #include <fcntl.h>
+ #endif
