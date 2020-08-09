@@ -9,7 +9,7 @@ PKG_VERSION:=0.16
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=@SF/$(PKG_NAME)
+PKG_SOURCE_URL:=https://github.com/aide/aide/releases/download/v$(PKG_VERSION)/
 PKG_HASH:=a81c53a131c4fd130b169b3a26ac35386a2f6e1e014f12807524cc273ed97345
 PKG_LICENSE:=GPL-2.0-only
 PKG_LICENSE_FILES:=COPYING
@@ -23,7 +23,7 @@ define Package/aide
 	CATEGORY:=Administration
 	DEPENDS:=+libgcrypt +libpcre
 	TITLE:=AIDE
-	URL:=http://aide.sourceforge.net/
+	URL:=https://aide.github.io/
 endef
 
 define Package/aide/description
